@@ -1,0 +1,63 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<!doctype html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8">
+</head>
+<style>
+	h1{
+		width: 100%;
+		padding: 20px;
+		text-align: center;
+		background-color: #2F3130;
+		border-radius: 10px;
+	}
+	.cell {
+		width: 100%;
+		padding: 20px;
+		font-size: 25px;
+		background-color: #232323;
+		border-radius: 10px;
+	}
+	table{
+		width: 100%;
+		text-align: center;
+		border-radius: 15px;
+		margin-top: 1%;
+	}
+	td, th {
+		border: 5px solid #19191b;
+		padding: 8px;
+		border-radius: 15px;
+		color: white;
+		text-align: center;
+		font-size: 1.5em;
+	}
+</style>
+
+	<body>
+		<main class="container">
+			<h1>Tlak</h1>
+			<div class="cell">
+				<h4>Tlak je měřen každou hodinu na domácí stanici</h4>
+				<h4>Rozsah měření: 30 - 110 kPa</h4>
+				<h4>Přesnost měření tlaku: 10 Pa</h4>
+				<h4>Sensor: BMP180</h4>
+			</div>
+			<table class="table">
+				<thead>
+				<tr style="background-color: #2F3130">
+					<th>Den</th>
+					<th>Domácí stanice</th>
+				</tr>
+				</thead>
+				<tbody style="background-color: #232323;">
+				</tbody>
+			</table>
+
+		</main>
+	</body>
+</html>

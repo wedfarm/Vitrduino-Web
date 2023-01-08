@@ -1,0 +1,61 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        table {
+            text-align: center;
+        }
+        td, th {
+            color: white;
+            border-radius: 15px;
+            text-align: left;
+            padding: 8px;
+        }
+        th{
+            background-color: #2F3130;
+        }
+        h1{
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background-color: #2F3130;
+            border-radius: 10px;
+        }
+        thead{
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+<main class="container">
+    <div class="col-md-12">
+        <h1 id="title"></h1>
+        <table class="table" id="data-table">
+            <thead>
+            <tr>
+                <th>Datum</th>
+                <th colspan="3" style="text-align: center">Domácí stanice</th>
+                <th colspan="4" style="text-align: center">Venkovní stanice</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Teplota</th>
+                <th>Vlhkost</th>
+                <th>Tlak</th>
+                <th>Teplota</th>
+                <th>Vlhkost</th>
+                <th>Int. světla</th>
+                <th>UV záření</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>

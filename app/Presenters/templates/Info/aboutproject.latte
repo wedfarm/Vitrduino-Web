@@ -1,0 +1,67 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		.link{
+			width: 100%;
+			padding: 20px;
+			text-align: center;
+			background-color: #2F3130;
+			border-radius: 10px;
+		}
+		.link:hover{
+			opacity: 50%;
+		}
+		h1, h2{
+			width: 100%;
+			padding: 20px;
+			text-align: center;
+			background-color: #2F3130;
+			border-radius: 10px;
+		}
+		h6 {
+			width: 100%;
+			padding: 20px;
+			font-size: 22px;
+
+			background-color: #232323;
+			border-radius: 10px;
+		}
+		.image{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			width: 100%;
+			height: 15%;
+			border-radius: 10px
+		}
+	</style>
+</head>
+<body>
+	<main class="container">
+		<a href="https://drive.google.com/file/d/1kKyHve9d9AJzr7GxjRhCcXETmaA4hnNp/view?usp=share_link" class="link" style="text-decoration: none;color: white" target="_blank" download>
+			<img src="https://icons.veryicon.com/png/o/file-type/file-type-1/pdf-icon.png" alt="PDF" style="width: 2%;height: 2%">
+			Odkaz na celý dokument o projektu
+		</a>
+		<h1>Projekt Vitrduino</h1>
+		<img class="image" src="https://i.imgur.com/heUyYbs.jpg" alt="Obrázek meteostanic">
+		<h2>Co je cílem naší práce?</h2>
+		<h6 style="color: lightgrey">
+			Hlavním cílem práce je vytvořit dvě funkční meteostanice a pro jejich výstup je potřeba naprogramovat webovou stránku. Téma jsme vybírali pečlivě a primárně jsme na internetu hledali zajímavé projekty z arduina, které by se dali spojit s webovou stránkou v jednotný projekt. Našli jsme meteostanici, která nás oslovila, ale měla spousty nedostatků, které jsme chtěli opravit a celkově vylepšit.
+		</h6>
+		<h2>Stručný nástin projektu</h2>
+		<h6 style="color: lightgrey">
+		Naše meteostanice se zaměřuje na měření a sběr meteorologických údajů. Projekt obsahuje dvě jednotky meteostanice, z nichž jedna je pro domácí využití a ta druhá pro venkovní využití. Stanice mezi sebou umí komunikovat na základě radiového spojení. Obě krabičky posílají svá naměřená data přes wifi na server, který běží na malém počítači raspberry pi a ukládají se do databáze sqlite. Všechna aktuální a už zaznamenaná data se poté zobrazují na naší webové stránce. Web je vytvořen v programovacím jazyku PHP s podporou frameworku Nette. Na webu používáme pro zobrazení dat přehledné XY grafy, koláčové a tabulky s zaznamenanými daty, které se filtrují podle měřené jednotky a místa meteostanice.  Nadále web obsahuje informace o projektu a fotky meteostanic.
+		</h6>
+		<h2>Pracovní postupy</h2>
+		<h6 style="color: lightgrey">
+		Nejprve je potřeba vytvořit schéma zapojení obou stanic. Podle schémat vytvoříme obvody, ve kterých použijeme všechny destičky, moduly a sensory a nasimulujeme si jak bude meteostanice vypadat a fungovat. Jakmile bude vše fungovat tak navrhneme plošné spoje, které si pak necháme vytvořit. Na prázdné plošné spoje napájíme vývojové destičky, moduly a sensory. Nakonec si vymodelujeme a pomocí 3D tisku vytiskneme krabičky do kterých si osazené plošné spoje namontujeme. Co se týče webu tak je zapotřebí si stáhnout program PHPstorm na programování webové stránky v jazyku PHP. Po spuštění webového serveru začneme pracovat na úvodní stránce. Nejprve si navrhneme hlavní design a poté vylepšíme vzhled stránky pomocí jazyku CSS. Když bude hlavní stránka hotová, tak přidáme další stránky jako například Doma, Venku a stránky s filtrovanými daty. Nakonec si přidáme i stránku s fotkami a informacemi o projektu.
+		</h6>
+		<h2>Jaké veličiny měříme a proč? A proč některé jiné neřešíme</h2>
+		<h6 style="color: lightgrey">
+		U meteostanice měříme základní veličiny jako je teplota a vlhkost a tlak. Oproti obyčejným meteostanicí měříme navíc i UV záření a intenzitu světla. Teplota a vlhkost a tlak jsou asi jasné veličiny a netřeba je zdůvodňovat. Zajímavá je veličina UV záření. Základní jednotka je UV index a hodnoty se pohybují v rozmezí od 0 až 11+. Určuje nám, jak moc slunce vyzařuje UV záření, jak se máme venku chovat a jestli je bezpečné vycházet ven bez potřebné ochrany. Další veličina je intenzita světla. Podle ní dokážeme poznat, jestli svítí slunce, nebo jestli je mlha či je pod mrakem anebo jestli je noc či den bez toho abychom se podívali na oblohu. Sensory které nepoužíváme jsou například Anemometr, Směrovka větru či srážkoměr. Anemometr určuje rychlost větru a k tomu je potřeba vyvinout extra zařízení a zaobírat se vývojem. Mohlo by to být téma třeba na další projekt. Taktéž i směrovka větru či srážkoměr by šli vymyslet a zkonstruovat. Ale nebyl čas se tímto zaobírat, a proto v naši meteostanici chybí.
+		</h6>
+	</main>
+</body>

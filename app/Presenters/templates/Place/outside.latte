@@ -1,0 +1,187 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		h1{
+			width: 100%;
+			padding: 15px;
+			background-color: #2F3130;
+			border-radius: 10px;
+			text-align: center;
+		}
+		.cell {
+			width: 100%;
+			background-color: #232323;
+			border-radius: 10px;
+		}
+		#obrazek{
+			width: 100%;
+			height: 50%;
+			border-radius: 10px;
+		}
+		table{
+			width: 100%;
+			text-align: center;
+		}
+		th,td{
+			border: 5px solid #19191b;
+			padding: 8px;
+			border-radius: 15px;
+		}
+		th{
+			background-color: #2F3130;
+		}
+		td{
+			background-color: #232323;
+		}
+		.semi-donut-number{
+			margin-top: 20%;
+			font-size: 1.8em;
+		}
+		.semi-donut-name{
+			font-size: 0.8em;
+		}
+		.semi-donut {
+			text-decoration: none;
+			--percentage: 0;
+			width: 320px;
+			height: 160px;
+			position: relative;
+			font-size: 22px;
+			font-weight: 600;
+			overflow: hidden;
+			display: inline-block;
+		}
+		.semi-donut:after
+		{
+			content: '';
+			width: 320px;
+			height: 320px;
+			border:50px solid;
+			border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--fill) var(--fill);
+			position: absolute;
+			border-radius: 50%;
+			left: 0;
+			top: 0;
+			transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
+			animation : fillAnimation 1s ease-in;
+		}
+	</style>
+</head>
+<body>
+
+<main class="container">
+	<h1 style="text-align: center">Venku</h1>
+	<div class="cell">
+		<div class="row mb-2" style="margin-top: 1%;margin-left: 1%;">
+			<div class="col-md-6">
+				<p>Meteostanice se nachází pod stříškou venku kde na ní nesvítí slunce a je tak ve stínu a má udeální prostředí na měření</p>
+				<p>Co bylo potřeba na projekt: </p>
+				<ul>
+					<li>Arduino Nano</li>
+					<li>Plošný spoj</li>
+					<li>Teploměr DHT21</li>
+					<li>Sensor intenzity světla BH1750</li>
+					<li>Sensor UV záření ML8511</li>
+					<li>ESP01 s adaptérem</li>
+					<li>NRF24L01 s adaptérem</li>
+					<li>LED dioda</li>
+					<li>3D tiskárna</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<div class="cell">
+					<img id="obrazek" alt="Venkovní meteostanice" class="mySlides" src="https://i.imgur.com/sUXPtv4.jpg">
+					<img id="obrazek" alt="Venkovní meteostanice" class="mySlides" src="https://i.imgur.com/9aUtRmq.jpg">
+					<img id="obrazek" alt="Venkovní meteostanice" class="mySlides" src="https://i.imgur.com/i7kyEnG.jpg">
+					<img id="obrazek" alt="Venkovní meteostanice" class="mySlides" src="https://i.imgur.com/eeu1CTH.jpg">
+					<img id="obrazek" alt="Venkovní meteostanice" class="mySlides" src="https://i.imgur.com/sDWctm5.jpg">
+					<img id="obrazek" alt="Venkovní meteostanice" class="mySlides" src="https://i.imgur.com/0hV8Z7q.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<table id="data_table">
+		<thead>
+		<tr>
+			<th>Den</th>
+			<th>Půlnoc(0:00)</th>
+			<th>Noc(3:00)</th>
+			<th>Ráno(6:00)</th>
+			<th>Dopoledne(9:00)</th>
+			<th>Poledne(12:00)</th>
+			<th>Odpoledne(15:00)</th>
+			<th>Podvečer(18:00)</th>
+			<th>Večer(21:00)</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<div class="cell" style="padding-top: 1%;text-align: center;margin-top: 1%;">
+		<div id="teplota" class="semi-donut" style="--fill: #FF0000">
+			<p class="semi-donut-number">
+				∅
+			</p>
+			<p class="semi-donut-name">
+				Teplota
+			</p>
+		</div>
+		<div id="vlhkost" class="semi-donut" style="--fill: #000000">
+			<p class="semi-donut-number">
+				∅
+			</p>
+			<p class="semi-donut-name">
+				Vlhkost
+			</p>
+		</div>
+		<div id="lux" class="semi-donut" style="--fill: #039BE5">
+			<p class="semi-donut-number">
+				∅
+			</p>
+			<p class="semi-donut-name">
+				Intenzita světla
+			</p>
+		</div>
+		<div id="uv" class="semi-donut" style="--fill: #039BE5">
+			<p class="semi-donut-number">
+				∅
+			</p>
+			<p class="semi-donut-name">
+				UV záření
+			</p>
+		</div>
+		<p style="text-align: left">
+			<a style="margin-left: 1%">-50</a>
+			<a style="margin-left: 19%">50</a>
+			<a style="margin-left: 3%">0</a>
+			<a style="margin-left: 19%">100</a>
+			<a style="margin-left: 2.5%">0</a>
+			<a style="margin-left: 18.5%">10000</a>
+			<a style="margin-left: 2%">1</a>
+			<a style="margin-left: 19.5%">11</a>
+		</p>
+	</div>
+</main>
+
+<script> // Promitani obrazků
+	var myIndex = 0;
+	carousel();
+	function carousel() {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		myIndex++;
+		if (myIndex > x.length) {
+			myIndex = 1
+		}
+		x[myIndex-1].style.display = "block";
+		setTimeout(carousel, 3000); // Change image every 3 seconds
+	}
+</script>

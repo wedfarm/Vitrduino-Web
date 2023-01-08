@@ -1,0 +1,63 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<!doctype html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8">
+</head>
+<style>
+	h1{
+		width: 100%;
+		padding: 20px;
+		text-align: center;
+		background-color: #2F3130;
+		border-radius: 10px;
+	}
+	.cell {
+		width: 100%;
+		padding: 20px;
+		font-size: 25px;
+		background-color: #232323;
+		border-radius: 10px;
+	}
+	table{
+		width: 100%;
+		text-align: center;
+		border-radius: 15px;
+		margin-top: 1%;
+	}
+	td, th {
+		border: 5px solid #19191b;
+		padding: 8px;
+		color: white;
+		border-radius: 15px;
+		text-align: center;
+		font-size: 1.5em;
+	}
+</style>
+
+<body>
+<main class="container">
+	<h1>Teplota</h1>
+	<div class="cell">
+		<h4>Teplota je měřená každou hodinu na obou stanicích</h4>
+		<h4>Rozsah měření: -40℃ ~ +80℃</h4>
+		<h4>Přesnost měření teploty: ±0.5℃</h4>
+		<h4>Sensory: DHT21 a HTU21D</h4>
+	</div>
+	<table class="table">
+		<thead>
+		<tr style="background-color: #2F3130">
+			<th>Den</th>
+			<th>Venkovní stanice</th>
+			<th>Domácí stanice</th>
+		</tr>
+		</thead>
+		<tbody style="background-color: #232323;">
+		</tbody>
+	</table>
+
+</body>
+</html>

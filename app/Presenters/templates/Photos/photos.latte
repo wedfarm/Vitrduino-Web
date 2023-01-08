@@ -1,0 +1,230 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+	<style>
+		h1{
+			width: 100%;
+			padding: 15px;
+			background-color: #2F3130;
+			border-radius: 10px;
+			text-align: center;
+		}
+		div.polaroid {
+			width: 23%;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 15px;
+			margin: 1%;
+		}
+		img {
+			width: 100%;
+			border-radius: 15px;
+		}
+
+		.vitrduino_image {
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.vitrduino_image:hover {
+			opacity: 0.7;
+		}
+		.modal {
+			display: none;
+			position: fixed;
+			padding-top: 100px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0,0.9);
+		}
+
+		/* Modal Content (image) */
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: 60%;
+		}
+		/* Caption of Modal Image */
+		#caption {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+			height: 150px;
+		}
+		.modal-content, #caption {
+			animation-name: zoom;
+			animation-duration: 0.6s;
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="container">
+	<h1>Fotky</h1>
+	<div class="row" style="width: 100%;text-align: center;font-size: 17px">
+
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/heUyYbs.jpg" alt="meteostanice doma a venku">
+			<div class="container">
+				<p>Meteostanice doma a venku</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/Dzt16qs.jpg" alt="Domácí meteostanice">
+			<div class="container">
+				<p>Domácí meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/hLkVRUr.jpg" alt="Domácí meteostanice">
+			<div class="container">
+				<p>Domácí meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/W2fzz49.jpg" alt="Domácí meteostanice">
+			<div class="container">
+				<p>Domácí meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/qVmvRVo.jpg" alt="Domácí meteostanice">
+			<div class="container">
+				<p>Domácí meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/1cQMIK2.jpg" alt="Domácí meteostanice">
+			<div class="container">
+				<p>Domácí meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/uIGk4yn.jpg" alt="Domácí meteostanice">
+			<div class="container">
+				<p>Domácí meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/dW0A8Uf.jpg" alt="Domácí meteostanice">
+			<div class="container">
+				<p>Domácí meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/sUXPtv4.jpg" alt="Venkovní meteostanice">
+			<div class="container">
+				<p>Venkovní meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/9aUtRmq.jpg" alt="Venkovní meteostanice">
+			<div class="container">
+				<p>Venkovní meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/i7kyEnG.jpg" alt="Venkovní meteostanice">
+			<div class="container">
+				<p>Venkovní meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/eeu1CTH.jpg" alt="Venkovní meteostanice">
+			<div class="container">
+				<p>Venkovní meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/sDWctm5.jpg" alt="Venkovní meteostanice">
+			<div class="container">
+				<p>Venkovní meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/0hV8Z7q.jpg" alt="Venkovní meteostanice">
+			<div class="container">
+				<p>Venkovní meteostanice</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/oc7RCGL.jpg" alt="Raspberry PI">
+			<div class="container">
+				<p>Raspberry PI</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/dDUrYNU.png" alt="Zkoušení obou meteostanic">
+			<div class="container">
+				<p>Zkoušení obou meteostanic</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/zvMIUus.jpg" alt="Vkládání komponent do vytisknuté krabičky">
+			<div class="container">
+				<p>Vkládání komponent do vytisknuté krabičky</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/jdxaHrF.png" alt="Návrh hlavní strany">
+			<div class="container">
+				<p>Návrh hlavní strany</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/di51wzL.png" alt="Návrh stránek doma a venku">
+			<div class="container">
+				<p>Návrh stránek doma a venku</p>
+			</div>
+		</div>
+		<div class="polaroid">
+			<img class="vitrduino_image" src="https://i.imgur.com/d38cSVS.png" alt="První vytváření grafu a tabulky">
+			<div class="container">
+				<p>První vytváření domácí stránky</p>
+			</div>
+		</div>
+	</div>
+	<div id="myModal" class="modal">
+		<img class="modal-content" id="img01">
+		<div id="caption"></div>
+	</div>
+</div>
+
+</main>
+<script>
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	var polaroid = document.getElementsByClassName('vitrduino_image');
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	var showModal = function(){
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		captionText.innerHTML = this.alt;
+	}
+	for (var i = 0; i < polaroid.length; i++) {
+		polaroid[i].addEventListener('click', showModal);
+	}
+	modal.onclick = function() {
+		modal.style.display = "none";
+	}
+</script>
+</body>
+</html>

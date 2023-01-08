@@ -1,0 +1,182 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		h1{
+			width: 100%;
+			padding: 15px;
+			background-color: #2F3130;
+			border-radius: 10px;
+			text-align: center;
+		}
+		.cell {
+			width: 100%;
+			background-color: #232323;
+			border-radius: 10px;
+		}
+		#obrazek{
+			width: 100%;
+			height: 50%;
+			border-radius: 10px;
+		}
+		table{
+			width: 100%;
+			text-align: center;
+		}
+		th,td{
+			border: 5px solid #19191b;
+			padding: 8px;
+			border-radius: 15px;
+		}
+		th{
+			background-color: #2F3130;
+		}
+		td{
+			background-color: #232323;
+		}
+		.semi-donut-number{
+			margin-top: 20%;
+			font-size: 1.8em;
+		}
+		.semi-donut-name{
+			font-size: 0.8em;
+		}
+		.semi-donut {
+			margin-left: 3%;
+			margin-right: 3%;
+			text-decoration: none;
+			--percentage: 0;
+			width: 340px;
+			height: 170px;
+			position: relative;
+			font-size: 22px;
+			font-weight: 600;
+			overflow: hidden;
+			display: inline-block;
+		}
+		.semi-donut:after
+		{
+			content: '';
+			width: 340px;
+			height: 340px;
+			border:50px solid;
+			border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--fill) var(--fill);
+			position: absolute;
+			border-radius: 50%;
+			left: 0;
+			top: 0;
+			transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
+			animation : fillAnimation 1s ease-in;
+		}
+	</style>
+</head>
+<body>
+
+<main class="container">
+	<h1 style="text-align: center">V domácnosti</h1>
+	<div class="cell">
+		<div class="row mb-2" style="margin-top: 1%;margin-left: 1%;">
+			<div class="col-md-6">
+				<p style="margin-top: 1%">Meteostanice se nachází uvnitř domu v obývacím pokoji kde na ní nesvítí slunce a je tak ve stínu a má udeální prostředí na měření</p>
+				<p>Co bylo potřeba na projekt: </p>
+				<ul>
+					<li>Arduino Nano</li>
+					<li>Plošný spoj</li>
+					<li>Teploměr HTU21D</li>
+					<li>Sensor tlaku BMP180</li>
+					<li>ESP01 s adaptérem</li>
+					<li>NRF24L01 s adaptérem</li>
+					<li>OLED display</li>
+					<li>LED dioda a tlačítko</li>
+					<li>3D tiskárna</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<div class="cell">
+					<img id="obrazek" alt="Domácí meteostanice" class="mySlides" src="https://i.imgur.com/Dzt16qs.jpg">
+					<img id="obrazek" alt="Domácí meteostanice" class="mySlides" src="https://i.imgur.com/hLkVRUr.jpg">
+					<img id="obrazek" alt="Domácí meteostanice" class="mySlides" src="https://i.imgur.com/W2fzz49.jpg">
+					<img id="obrazek" alt="Domácí meteostanice" class="mySlides" src="https://i.imgur.com/qVmvRVo.jpg">
+					<img id="obrazek" alt="Domácí meteostanice" class="mySlides" src="https://i.imgur.com/uIGk4yn.jpg">
+					<img id="obrazek" alt="Domácí meteostanice" class="mySlides" src="https://i.imgur.com/dW0A8Uf.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<table id="data_table">
+		<thead>
+		<tr>
+			<th>Den</th>
+			<th>Půlnoc(0:00)</th>
+			<th>Noc(3:00)</th>
+			<th>Ráno(6:00)</th>
+			<th>Dopoledne(9:00)</th>
+			<th>Poledne(12:00)</th>
+			<th>Odpoledne(15:00)</th>
+			<th>Podvečer(18:00)</th>
+			<th>Večer(21:00)</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<div class="cell" style="padding-top: 1%;text-align: center;margin-top: 1%;">
+		<div id="teplota" class="semi-donut" style="--fill: #FF0000">
+			<p class="semi-donut-number">
+				∅
+			</p>
+			<p class="semi-donut-name">
+				Teplota
+			</p>
+		</div>
+		<div id="vlhkost" class="semi-donut" style="--fill: #000000">
+			<p class="semi-donut-number">
+				∅
+			</p>
+			<p class="semi-donut-name">
+				Vlhkost
+			</p>
+		</div>
+		<div id="tlak" class="semi-donut" style="--fill: #039BE5">
+			<p class="semi-donut-number">
+				∅
+			</p>
+			<p class="semi-donut-name">
+				Tlak
+			</p>
+		</div>
+		<p style="text-align: left">
+			<a style="margin-left: 5%">-50</a>
+			<a style="margin-left: 20.7%">50</a>
+			<a style="margin-left: 9%">0</a>
+			<a style="margin-left: 20.7%">100</a>
+			<a style="margin-left: 7.7%">800</a>
+			<a style="margin-left: 19.7%">1200</a>
+		</p>
+	</div>
+</main>
+</body>
+
+<script> // Promitani obrazků
+	var myIndex = 0;
+	photoChange();
+	function photoChange() {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		myIndex++;
+		if (myIndex > x.length) {
+			myIndex = 1
+		}
+		x[myIndex-1].style.display = "block";
+		setTimeout(photoChange, 3000); // Změní obrázek každý 3s
+	}
+
+
+</script>
