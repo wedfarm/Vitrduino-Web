@@ -5,7 +5,7 @@ function roundNumber(value, precision) {
 
 async function getData(board, timeFrom) {
     return new Promise((resolve, reject) => {
-        fetch('http://localhost:5000/getData?board=' + board + "&ts=" + timeFrom)
+        fetch('http://localhost:5000/getData?board=' + board + "&ts=" + timeFrom) //pro použití na raspberry je potřeba přepsat localhost na 10.20.1.1
             .then(response => response.json())
             .then(data => {
                 resolve(data);
