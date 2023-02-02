@@ -170,7 +170,7 @@ async function reload() {
             let doneHours = [];
             data = data.reverse();
             data.forEach(row => {
-                let date = new Date(row.timestamp + (7200000));
+                let date = new Date(row.timestamp + (3600000));
                 if (!doneHours.includes(date.getUTCDate() + "-" + date.getUTCHours())) {
                     doneHours.push(date.getUTCDate() + "-" + date.getUTCHours());
                     document.querySelector("table.table tbody").innerHTML +=
@@ -188,7 +188,7 @@ async function reload() {
             let doneHours = [];
             data = data.reverse();
             data.forEach(row => {
-                let date = new Date(row.timestamp + (7200000));
+                let date = new Date(row.timestamp + (3600000));
                 if (!doneHours.includes(date.getUTCDate() + "-" + date.getUTCHours())) {
                     doneHours.push(date.getUTCDate() + "-" + date.getUTCHours());
                     var hRow = document.querySelector("#row-" + date.getUTCDate() + "-" + date.getUTCHours());
@@ -282,7 +282,7 @@ async function reload() {
         await getData(2, Date.now() - (1000 * 60 * 60 * 24 * 3)).then(data => {
             let doneDays = [];
             data.forEach(row => {
-                let date = new Date(row.timestamp);
+                let date = new Date(row.timestamp + 3600000);
                 if (!doneDays.includes(date.getUTCDate() + "-" + date.getUTCMonth()) && hours.includes(date.getUTCHours())) {
                     doneDays.push(date.getUTCDate() + "-" + date.getUTCMonth() + "-" + date.getUTCHours());
 
