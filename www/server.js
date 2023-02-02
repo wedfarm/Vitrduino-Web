@@ -217,7 +217,7 @@ async function reload() {
         await getData(1, Date.now() - (1000 * 60 * 60 * 24 * 3)).then(data => {
             let doneDays = [];
             data.forEach(row => {
-                let date = new Date(row.timestamp - 3600000);
+                let date = new Date(row.timestamp + 3600000);
                 if (!doneDays.includes(date.getUTCDate() + "-" + date.getUTCMonth()) && hours.includes(date.getUTCHours())) {
                     doneDays.push(date.getUTCDate() + "-" + date.getUTCMonth() + "-" + date.getUTCHours());
 
