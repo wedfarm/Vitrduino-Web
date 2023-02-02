@@ -238,7 +238,7 @@ async function reload() {
                             </tr>
                                 `;
                     }
-                    let index = hours.indexOf(date.getUTCHours()) + 1;
+                    let index = hours.indexOf(date.getUTCHours());
                     document.querySelectorAll("#row-" + date.getUTCDate() + "-" + date.getUTCMonth() + " td")[index].innerHTML = roundNumber(row.temp, 1) + "°C";
                 }
             });
