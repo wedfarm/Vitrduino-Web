@@ -217,7 +217,7 @@ async function reload() {
         await getData(1, Date.now() - (1000 * 60 * 60 * 24 * 3)).then(data => {
             let doneDays = [];
             data.forEach(row => {
-                let date = new Date(row.timestamp);
+                let date = new Date(row.timestamp - 3600000);
                 if (!doneDays.includes(date.getUTCDate() + "-" + date.getUTCMonth()) && hours.includes(date.getUTCHours())) {
                     doneDays.push(date.getUTCDate() + "-" + date.getUTCMonth() + "-" + date.getUTCHours());
 
@@ -238,7 +238,7 @@ async function reload() {
                             </tr>
                                 `;
                     }
-                    let index = hours.indexOf(date.getUTCHours());
+                    let index = hours.indexOf(date.getUTCHours()) + 1;
                     document.querySelectorAll("#row-" + date.getUTCDate() + "-" + date.getUTCMonth() + " td")[index].innerHTML = roundNumber(row.temp, 1) + "°C";
                 }
             });
