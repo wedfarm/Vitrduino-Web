@@ -5,7 +5,9 @@ function roundNumber(value, precision) {
 
 async function getData(board, timeFrom) {
     return new Promise((resolve, reject) => {
-        fetch('http://10.20.1.1:5000/getData?board=' + board + "&ts=" + timeFrom) //při programování na pc změnit ip adresu na localhost:5000
+        var currentUrl = window.location.href;
+	    var host = currentUrl.split('/')[0] + '//' + currentUrl.split(':')[1];
+        fetch(host +':5000/getData?board=' + board + "&ts=" + timeFrom) //při programování na pc změnit ip adresu na localhost:5000
             .then(response => response.json())
             .then(data => {
                 resolve(data);
